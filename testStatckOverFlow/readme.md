@@ -8,7 +8,7 @@
 &ensp;&ensp;2:put threads into hashmap to make sure they are always hold on references  
 
 ###### code here  
-'''  
+```
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.*;
@@ -29,7 +29,7 @@ public class TestStackOverFlow {
         }
     }
 }  
-'''
+```
 
 ### compile code:  
 &ensp;&ensp;javac TestStackOverFlow.java  
