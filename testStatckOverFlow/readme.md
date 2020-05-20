@@ -1,13 +1,13 @@
-### question: 
-&ensp;&ensp;what will happend when a lot of threads have bean created and executed?
-&ensp;&ensp;(ps: each of them will lead to stackoverflow error)
+### question:   
+&ensp;&ensp;what will happend when a lot of threads have bean created and executed?  
+&ensp;&ensp;(ps: each of them will lead to stackoverflow error)  
 
-### test:
-&ensp;&ensp;I want to test in such enviroments...
-&ensp;&ensp;1、ignore the stackoverflow error, make sure others still running or waiting
-&ensp;&ensp;2、put threads into hashmap to make sure they are always hold on references
+### test:  
+&ensp;&ensp;I want to test in such enviroments...  
+&ensp;&ensp;1:ignore the stackoverflow error, make sure others still running or waiting  
+&ensp;&ensp;2:put threads into hashmap to make sure they are always hold on references  
 
-###### code here
+###### code here  
 '''
 
 import java.util.HashMap;
@@ -32,16 +32,34 @@ public class TestStackOverFlow {
 }
 '''
 
-### compile code...
-&ensp;&ensp;javac TestStackOverFlow.java
+### compile code:  
+&ensp;&ensp;javac TestStackOverFlow.java  
 
-### run code...(ps:allocates a small stack memory to make them easy to lead to stackoverflow error, 228k is the least memory size)
-![avatar](least_memory.png)
-&ensp;&ensp;java -Xss228k TestStackOverFlow
+### run code:(ps:allocates a small stack memory to make them easy to lead to stackoverflow error, 228k is the least memory size)  
+![avatar](../least_memory.png)  
+&ensp;&ensp;java -Xss228k TestStackOverFlow  
 
-### result:
-1、GC overhead limit exceeded
-Killed
-![avatar](result_1.png)
+### runing in idea...  
+![avatar](../runing_in_idea.png)  
 
-2、To be continue...
+
+### result:  
+
+1:GC overhead limit exceeded  
+
+Killed  
+
+![avatar](../result_1.png)
+
+2、memory analyzer...  
+2.1、dump heap...(I fergot to dump stack...ah)  
+![avatar](../top_and_dump.png)  
+2.2、memory analyzer...  
+there is something happend that I don't understand...lead mat to exception...  
+obviously! heap overflow...but I don't understand...  
+but I got a error log...  
+@see  
+[error log](../hs_err_pid11477.log)  
+
+3、To be continue...  
+
