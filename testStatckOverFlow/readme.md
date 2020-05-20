@@ -36,11 +36,11 @@ public class TestStackOverFlow {
 &ensp;&ensp;javac TestStackOverFlow.java  
 
 ### run code:(ps:allocates a small stack memory to make them easy to lead to stackoverflow error, 228k is the least memory size)  
-![avatar](../least_memory.png)  
+![avatar](../testStatckOverFlow/least_memory.png)  
 &ensp;&ensp;java -Xss228k TestStackOverFlow  
 
 ### runing in idea...  
-![avatar](../runing_in_idea.png)  
+![avatar](../testStatckOverFlow/runing_in_idea.png)  
 
 
 ### result:  
@@ -49,17 +49,20 @@ public class TestStackOverFlow {
 
 Killed  
 
-![avatar](../result_1.png)
+![avatar](../testStatckOverFlow/result_1.png)
 
-2、memory analyzer...  
-2.1、dump heap...(I fergot to dump stack...ah)  
-![avatar](../top_and_dump.png)  
-2.2、memory analyzer...  
-there is something happend that I don't understand...lead mat to exception...  
-obviously! heap overflow...but I don't understand...  
+2:memory analyzer...  
+
+2.1:dump heap...(I fergot to dump stack...ah)  
+![avatar](../testStatckOverFlow/top_and_dump.png)  
+
+2.2:memory analyzer...  
+there is something happend that I don't understand...something lead mat to exception...  
+obviously! because of heap overflow...sadly! I really don't understand...  
 but I got a error log...  
-@see  
-[error log](../hs_err_pid11477.log)  
 
-3、To be continue...  
+@see  
+[error log](../testStatckOverFlow/hs_err_pid11477.log)  
+
+3:To be continue...  
 
